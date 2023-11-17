@@ -1,0 +1,80 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+// Definizione della classe Hangman
+class Hangman {
+public:
+    // Costruttore della classe
+    Hangman() {
+        // Parole possibili per il gioco
+        parolePossibili = {"gatto", "cane", "albero", "casa", "computer", "programmazione", "pizza", "cielo"};
+
+        // Inizializza il generatore di numeri casuali
+        srand(static_cast<unsigned int>(time(0)));
+
+        // Scegli una parola a caso dal vettore
+        parolaSegreta = parolePossibili[rand() % parolePossibili.size()];
+
+        // Inizializza le lettere indovinate
+        for (char lettera : parolaSegreta) {
+            if (isalpha(lettera)) {
+                lettereIndovinate.push_back('_');
+            } else {
+                lettereIndovinate.push_back(lettera);
+            }
+        }
+    }
+
+    // Metodo per visualizzare lo stato attuale della parola
+    void visualizzaStatoAttuale() const {
+        for (char lettera : lettereIndovinate) {
+            cout << lettera << ' ';
+        }
+        cout << endl;
+    }
+
+    // Metodo per indovinare una lettera
+    void indovinaLettera(char lettera) {
+        for (size_t i = 0; i < parolaSegreta.length(); ++i) {
+            if (parolaSegreta[i] == lettera) {
+                lettereIndovinate[i] = lettera;
+            }
+        }
+    }
+
+    // Metodo per controllare se la parola è stata indovinata
+    bool parolaIndovinata() const {
+        return lettereIndovinate == parolaSegreta;
+    }
+
+private:
+    vector<string> parolePossibili;
+    string parolaSegreta;
+    vector<char> lettereIndovinate;
+};
+
+int main() {
+    Hangman gioco;
+
+    cout << "Benvenuto nel gioco dell'impiccato!" << endl;
+
+    while (!gioco.parolaIndovinata()) {
+        cout << "Stato attuale della parola: ";
+        gioco.visualizzaStatoAttuale();
+
+        char tentativo;
+        cout << "Indovina una lettera: ";
+        cin >> tentativo;
+
+        gioco.indovinaLettera(tentativo);
+    }
+
+    cout << "Complimenti! Hai indovinato la parola: " << gioco.visualizzaStatoAttuale() << endl;
+
+    return 0;
+}
