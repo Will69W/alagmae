@@ -57,24 +57,3 @@ private:
     string parolaSegreta;
     vector<char> lettereIndovinate;
 };
-
-int main() {
-    Hangman gioco;
-
-    cout << "Benvenuto nel gioco dell'impiccato!" << endl;
-
-    while (!gioco.parolaIndovinata()) {
-        cout << "Stato attuale della parola: ";
-        gioco.visualizzaStatoAttuale();
-
-        char tentativo;
-        cout << "Indovina una lettera: ";
-        cin >> tentativo;
-
-        gioco.indovinaLettera(tentativo);
-    }
-
-    cout << "Complimenti! Hai indovinato la parola: " << gioco.visualizzaStatoAttuale() << endl;
-
-    return 0;
-}
