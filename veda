@@ -51,9 +51,3 @@ public:
     bool parolaIndovinata() const {
         return lettereIndovinate == parolaSegreta;
     }
-
-private:
-    vector<string> parolePossibili;
-    string parolaSegreta;
-    vector<char> lettereIndovinate;
-};
