@@ -47,7 +47,3 @@ public:
         }
     }
 
-    // Metodo per controllare se la parola è stata indovinata
-    bool parolaIndovinata() const {
-        return lettereIndovinate == parolaSegreta;
-    }
