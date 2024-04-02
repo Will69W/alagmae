@@ -1,17 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <cstdlib>
-#include <ctime>
-
-using namespace std;
-
-// Definizione della classe Hangman
-class Hangman {
-public:
-    // Costruttore della classe
-    Hangman() {
-        // Parole possibili per il gioco
         parolePossibili = {"gatto", "cane", "albero", "casa", "computer", "programmazione", "pizza", "cielo"};
 
         // Inizializza il generatore di numeri casuali
