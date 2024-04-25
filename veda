@@ -9,13 +9,6 @@
         // Scegli una parola a caso dal vettore
         parolaSegreta = parolePossibili[rand() % parolePossibili.size()];
 
-        // Inizializza le lettere indovinate
-        for (char lettera : parolaSegreta) {
-            if (isalpha(lettera)) {
-                lettereIndovinate.push_back('_');
-            } else {
-                lettereIndovinate.push_back(lettera);
-            }
         }
     }
 
