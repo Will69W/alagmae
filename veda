@@ -6,8 +6,7 @@
         // Inizializza il generatore di numeri casuali
         srand(static_cast<unsigned int>(time(0)));
 
-        // Scegli una parola a caso dal vettore
-        parolaSegreta = parolePossibili[rand() % parolePossibili.size()];
+        // Scegli una parola a caso dal vettorePossibili.size()];
 
         }
     }
