@@ -8,12 +8,6 @@
 
         // Scegli una parola a caso dal vettorePossibili.size()];
 
-        }
-    }
-
-    // Metodo per visualizzare lo stato attuale della parola
-    void visualizzaStatoAttuale() const {
-        for (char lettera : lettereIndovinate) {
             cout << lettera << ' ';
         }
         cout << endl;
