@@ -13,11 +13,6 @@
         cout << endl;
     }
 
-    // Metodo per indovinare una lettera
-    void indovinaLettera(char lettera) {
-        for (size_t i = 0; i < parolaSegreta.length(); ++i) {
-            if (parolaSegreta[i] == lettera) {
-                lettereIndovinate[i] = lettera;
             }
         }
     }
